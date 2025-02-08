@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Hall Ticket</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @media print {
+        .print-btn {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="flex justify-center items-center min-h-screen bg-cover bg-center bg-no-repeat"
+    style="
+      background-image: url('https://i.ytimg.com/vi/iY_fc6PVno0/maxresdefault.jpg');
+    ">
+    <div class="bg-white shadow-lg rounded-xl p-6 w-full max-w-3xl">
+      <div class="flex items-center justify-between border-b pb-4">
+        <img src="college_logo.png" alt="College Logo" class="w-16" />
+        <h2 class="text-xl font-bold text-gray-900 text-center flex-grow">
+          Rajiv Gandhi University of Knowledge Technologies, Basar
+        </h2>
+      </div>
+      <h3 class="text-center text-lg font-semibold mt-4">
+        Examination Hall Ticket
+      </h3>
+      <div class="flex justify-between items-start mt-4">
+        <div>
+          <p class="font-semibold">
+            Student Name:
+            <span id="studentName" class="text-gray-700">John Doe</span>
+          </p>
+          <p class="font-semibold">
+            Roll Number:
+            <span id="studentRoll" class="text-gray-700">RGUKT2025012</span>
+          </p>
+          <p class="font-semibold">
+            Course: <span id="studentCourse" class="text-gray-700">B.Tech</span>
+          </p>
+          <p class="font-semibold">
+            Branch:
+            <span id="studentBranch" class="text-gray-700"
+              >Computer Science</span
+            >
+          </p>
+          <p class="font-semibold">
+            Year: <span id="studentYear" class="text-gray-700">2nd Year</span>
+          </p>
+          <p class="font-semibold">
+            Semester:
+            <span id="studentSemester" class="text-gray-700">4th Semester</span>
+          </p>
+          <p class="font-semibold">
+            Date of Birth:
+            <span id="studentDOB" class="text-gray-700">15-Aug-2004</span>
+          </p>
+          <p class="font-semibold">
+            Gender: <span id="studentGender" class="text-gray-700">Male</span>
+          </p>
+          <p class="font-semibold">
+            Exam Type: <span class="text-gray-700">Final Exam</span>
+          </p>
+        </div>
+        <img
+          id="studentPhoto"
+          src="student_photo.png"
+          alt="Student Photo"
+          class="w-24 h-28 border-2 border-gray-500 rounded-lg" />
+      </div>
+      <h3 class="text-lg font-semibold mt-6">Exam Schedule:</h3>
+      <table class="w-full mt-2 border-collapse border border-gray-300 text-sm">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-300 px-3 py-2">Subject</th>
+            <th class="border border-gray-300 px-3 py-2">Date</th>
+            <th class="border border-gray-300 px-3 py-2">Time</th>
+          </tr>
+        </thead>
+        <tbody id="examSchedule">
+          <tr class="border border-gray-300 text-center">
+            <td class="px-3 py-2">Mathematics</td>
+            <td class="px-3 py-2">10-Feb-2025</td>
+            <td class="px-3 py-2">10:00 AM - 1:00 PM</td>
+          </tr>
+          <tr class="border border-gray-300 text-center">
+            <td class="px-3 py-2">Physics</td>
+            <td class="px-3 py-2">12-Feb-2025</td>
+            <td class="px-3 py-2">2:00 PM - 5:00 PM</td>
+          </tr>
+          <tr class="border border-gray-300 text-center">
+            <td class="px-3 py-2">Data Structures</td>
+            <td class="px-3 py-2">14-Feb-2025</td>
+            <td class="px-3 py-2">10:00 AM - 1:00 PM</td>
+          </tr>
+          <tr class="border border-gray-300 text-center">
+            <td class="px-3 py-2">Operating Systems</td>
+            <td class="px-3 py-2">16-Feb-2025</td>
+            <td class="px-3 py-2">2:00 PM - 5:00 PM</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="mt-6">
+        <h3 class="text-lg font-semibold">Instructions:</h3>
+        <ul class="list-disc list-inside text-gray-700 text-sm mt-2">
+          <li>Carry this hall ticket to the examination hall.</li>
+          <li>Bring your college ID card along with the hall ticket.</li>
+          <li>Electronic devices, books, and notes are strictly prohibited.</li>
+          <li>Report to the exam hall 30 minutes before the exam time.</li>
+        </ul>
+      </div>
+      <div class="flex justify-center mt-6">
+        <img
+          id="qrCode"
+          src="qr_code.png"
+          alt="QR Code for Verification"
+          class="w-20" />
+      </div>
+      <button
+        onclick="window.print()"
+        class="print-btn mt-6 bg-blue-600 text-white px-4 py-2 rounded-md w-full">
+        Print Hall Ticket
+      </button>
+    </div>
+  </body>
+</html>

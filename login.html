@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="flex justify-center items-center min-h-screen bg-cover bg-center bg-no-repeat"
+    style="
+      background-image: url('https://i.ytimg.com/vi/iY_fc6PVno0/maxresdefault.jpg');
+    ">
+    <div
+      class="bg-white bg-opacity-40 shadow-xl rounded-2xl p-10 w-full max-w-md border border-white border-opacity-30">
+      <!-- Header -->
+      <h2 class="text-3xl font-bold text-center text-white drop-shadow-lg">
+        Student Login
+      </h2>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="mt-6 space-y-6">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700">Email</label>
+          <div
+            class="flex items-center border border-white border-opacity-80 rounded-lg p-3 bg-white bg-opacity-20 transition duration-300 ease-in-out hover:bg-opacity-30 focus-within:bg-opacity-40">
+            <input
+              type="email"
+              id="email"
+              class="w-full outline-none bg-transparent text-gray-700 placeholder-gray-700"
+              placeholder="student@college.com"
+              required />
+          </div>
+        </div>
+
+        <div>
+          <label
+            class="block text-sm font-semibold text-gray-800 placeholder-gray-700"
+            >Password</label
+          >
+          <div
+            class="flex items-center border border-white border-opacity-40 rounded-lg p-3 bg-white bg-opacity-20 transition duration-300 ease-in-out hover:bg-opacity-30 focus-within:bg-opacity-40">
+            <input
+              type="password"
+              id="password"
+              class="w-full outline-none bg-transparent text-gray-700 placeholder-gray-300 placeholder-gray-700"
+              placeholder="123456"
+              required />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold py-3 rounded-lg hover:scale-105 hover:shadow-lg transition duration-300 ease-in-out">
+          Login
+        </button>
+      </form>
+
+      <!-- Error Message -->
+      <p id="loginMessage" class="text-center text-red-400 mt-4 hidden"></p>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          if (email === "student@college.com" && password === "123456") {
+            const userData = {
+              name: "John Doe",
+              email: email,
+              paymentStatus: "Not Paid",
+            };
+            localStorage.setItem("userData", JSON.stringify(userData));
+            alert("Login successful! Redirecting to Payment Page...");
+            window.location.href = "payment.html";
+          } else {
+            const errorMessage = document.getElementById("loginMessage");
+            errorMessage.innerText = "Invalid credentials!";
+            errorMessage.classList.remove("hidden");
+          }
+        });
+    </script>
+  </body>
+</html>
